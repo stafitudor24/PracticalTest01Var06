@@ -13,8 +13,8 @@
 
         <TextView
             android:id="@+id/numere1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="33dp"
+            android:layout_height="30dp"
             android:layout_marginStart="37dp"
             android:layout_marginTop="185dp"
             android:editable="true"
@@ -30,6 +30,7 @@
             android:layout_marginTop="23dp"
             android:layout_marginEnd="299dp"
             android:layout_marginBottom="456dp"
+            android:clickable="true"
             android:editable="true"
             android:text="hold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,8 +40,8 @@
 
         <TextView
             android:id="@+id/numere2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="46dp"
+            android:layout_height="40dp"
             android:layout_marginStart="117dp"
             android:layout_marginTop="185dp"
             android:layout_marginEnd="114dp"
@@ -60,6 +61,7 @@
             android:layout_marginStart="56dp"
             android:layout_marginTop="23dp"
             android:layout_marginBottom="456dp"
+            android:clickable="true"
             android:editable="true"
             android:text="hold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,10 +70,10 @@
 
         <TextView
             android:id="@+id/numere3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="114dp"
-            android:layout_marginTop="185dp"
+            android:layout_width="53dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="184dp"
             android:editable="true"
             android:text="1"
             app:layout_constraintStart_toEndOf="@+id/numere2"
@@ -85,12 +87,15 @@
             android:layout_marginTop="23dp"
             android:layout_marginEnd="67dp"
             android:layout_marginBottom="456dp"
+            android:clickable="true"
             android:editable="true"
             android:text="hold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/checkBox2"
-            app:layout_constraintTop_toBottomOf="@+id/numere3" />
+            app:layout_constraintTop_toBottomOf="@+id/numere3"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/button"
@@ -100,11 +105,13 @@
             android:layout_marginTop="66dp"
             android:layout_marginEnd="171dp"
             android:layout_marginBottom="342dp"
-            android:text="Button"
+            android:clickable="true"
+            android:editable="true"
+            android:text="Play"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+            app:layout_constraintTop_toBottomOf="@id/checkBox2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
