@@ -9,9 +9,14 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
+import android.app.Activity
+import android.content.Intent
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 
-class MainActivity : AppCompatActivity() {
+class PracticalTest01Var06MainActivity : AppCompatActivity() {
     private val values = listOf("1", "2", "3", "*")
+    private lateinit var startForResult: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -40,6 +45,30 @@ class MainActivity : AppCompatActivity() {
                 numere3.setText(values.random())
             }
             Toast.makeText(this, numere1.text.toString() + " " + numere2.text.toString() + " " + numere3.text.toString(), Toast.LENGTH_LONG).show()
+        }
+
+        startForResult = registerForActivityResult(StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+                val gain = data?.getIntExtra("gain", 0)
+                Toast.makeText(this, "Gain: " + gain, Toast.LENGTH_LONG).show()
+            }
+        }
+
+        val computeButton: Button = findViewById(R.id.compute_button)
+        computeButton.setOnClickListener {
+            var checked = 0
+            if (checkBox1.isChecked) checked++
+            if (checkBox2.isChecked) checked++
+            if (checkBox3.isChecked) checked++
+
+            val intent = Intent(this, PracticalTest01VarSecondaryActivity::class.java).apply {
+                putExtra("numar1", numere1.text.toString())
+                putExtra("numar2", numere2.text.toString())
+                putExtra("numar3", numere3.text.toString())
+                putExtra("checked", checked)
+            }
+            startForResult.launch(intent)
         }
     }
 }
